@@ -1,0 +1,21 @@
+# SPDX-License-Identifier: Apache-2.0
+
+CONFIG_SOC_SERIES_STM32F4X=y
+CONFIG_SOC_STM32F405XG=y
+CONFIG_QEMU_ICOUNT_SHIFT=8
+
+# Enable clock configuration
+CONFIG_CLOCK_CONTROL=y
+
+# Enable pinmux
+CONFIG_PINMUX=y
+
+# Enable GPIO
+CONFIG_GPIO=y
+
+# Enable serial
+CONFIG_SERIAL=y
+
+# Enable console
+CONFIG_CONSOLE=y
+CONFIG_UART_CONSOLE=y
