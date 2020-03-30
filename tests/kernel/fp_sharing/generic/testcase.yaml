@@ -1,7 +1,7 @@
 tests:
   kernel.float.fp_sharing.arm:
     extra_args: PI_NUM_ITERATIONS=70000
-    filter: CONFIG_ARMV7_M_ARMV8_M_FP
+    filter: CONFIG_ARM and CONFIG_CPU_HAS_VFP
     slow: true
     tags: kernel
     timeout: 600

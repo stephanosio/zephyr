@@ -44,7 +44,7 @@
 #else
 #include "float_regs_x86_other.h"
 #endif /* __GNUC__ */
-#elif defined(CONFIG_ARMV7_M_ARMV8_M_FP)
+#elif defined(CONFIG_ARM)
 #if defined(__GNUC__)
 #include "float_regs_arm_gcc.h"
 #else
@@ -177,7 +177,7 @@ static void load_store_low(void)
 		 * disable floating point operations for the task.
 		 */
 #if (defined(CONFIG_X86) && defined(CONFIG_LAZY_FP_SHARING)) || \
-		defined(CONFIG_ARMV7_M_ARMV8_M_FP)
+		defined(CONFIG_ARM)
 		/*
 		 * In x86:
 		 * The subsequent execution of _load_all_float_registers() will
