@@ -111,7 +111,7 @@ SECTION_SUBSEC_FUNC(TEXT, _reset_section, __start)
     mov r13, #0         /* r13_sys */
     mov r14, #0         /* r14_sys */
 
-#if defined(CONFIG_FLOAT)
+#if defined(CONFIG_CPU_HAS_VFP)
     /*
      * Initialise FPU registers to a defined state.
      */
@@ -142,7 +142,25 @@ SECTION_SUBSEC_FUNC(TEXT, _reset_section, __start)
     fmdrr d13, r1, r1
     fmdrr d14, r1, r1
     fmdrr d15, r1, r1
-#endif /* CONFIG_FLOAT */
+#if defined(CONFIG_VFP_FEATURE_REGS_S64_D32)
+    fmdrr d16,  r1, r1
+    fmdrr d17,  r1, r1
+    fmdrr d18,  r1, r1
+    fmdrr d19,  r1, r1
+    fmdrr d20,  r1, r1
+    fmdrr d21,  r1, r1
+    fmdrr d22,  r1, r1
+    fmdrr d23,  r1, r1
+    fmdrr d24,  r1, r1
+    fmdrr d25,  r1, r1
+    fmdrr d26,  r1, r1
+    fmdrr d27,  r1, r1
+    fmdrr d28,  r1, r1
+    fmdrr d29,  r1, r1
+    fmdrr d30,  r1, r1
+    fmdrr d31,  r1, r1
+#endif /* CONFIG_VFP_FEATURE_REGS_S64_D32 */
+#endif /* CONFIG_CPU_HAS_VFP */
 
 #endif /* CONFIG_CPU_HAS_DCLS */
 
