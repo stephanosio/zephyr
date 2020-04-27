@@ -22,7 +22,6 @@
 #define ZEPHYR_ARCH_NIOS2_INCLUDE_KERNEL_ARCH_DATA_H_
 
 #include <toolchain.h>
-#include <linker/sections.h>
 #include <arch/cpu.h>
 
 #ifndef _ASMLANGUAGE

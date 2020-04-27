@@ -26,7 +26,6 @@
 #include <soc.h>
 #include <init.h>
 #include <drivers/uart.h>
-#include <linker/sections.h>
 
 /* definitions */
 

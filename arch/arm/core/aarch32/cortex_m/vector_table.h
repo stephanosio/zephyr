@@ -24,7 +24,6 @@
 #ifdef _ASMLANGUAGE
 
 #include <toolchain.h>
-#include <linker/sections.h>
 #include <sys/util.h>
 
 GTEXT(__start)

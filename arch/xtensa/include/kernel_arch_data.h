@@ -21,7 +21,6 @@
 #define ZEPHYR_ARCH_XTENSA_INCLUDE_KERNEL_ARCH_DATA_H_
 
 #include <toolchain.h>
-#include <linker/sections.h>
 #include <arch/cpu.h>
 
 #if !defined(_ASMLANGUAGE) && !defined(__ASSEMBLER__)

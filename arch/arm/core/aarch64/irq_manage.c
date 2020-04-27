@@ -14,7 +14,6 @@
 #include <tracing/tracing.h>
 #include <irq.h>
 #include <toolchain.h>
-#include <linker/sections.h>
 #include <sw_isr_table.h>
 #include <drivers/interrupt_controller/gic.h>
 

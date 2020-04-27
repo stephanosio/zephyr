@@ -22,7 +22,6 @@ LOG_MODULE_REGISTER(net_test, CONFIG_NET_UTILS_LOG_LEVEL);
 #include <net/net_core.h>
 #include <net/net_ip.h>
 #include <net/ethernet.h>
-#include <linker/sections.h>
 
 #include <tc_util.h>
 #include <ztest.h>

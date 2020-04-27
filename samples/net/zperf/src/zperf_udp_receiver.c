@@ -7,7 +7,6 @@
 #include <logging/log.h>
 LOG_MODULE_DECLARE(net_zperf_sample, LOG_LEVEL_DBG);
 
-#include <linker/sections.h>
 #include <toolchain.h>
 
 #include <zephyr.h>

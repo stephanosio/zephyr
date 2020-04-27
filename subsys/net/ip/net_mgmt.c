@@ -9,7 +9,6 @@ LOG_MODULE_REGISTER(net_mgmt, CONFIG_NET_MGMT_EVENT_LOG_LEVEL);
 
 #include <kernel.h>
 #include <toolchain.h>
-#include <linker/sections.h>
 
 #include <sys/util.h>
 #include <sys/slist.h>

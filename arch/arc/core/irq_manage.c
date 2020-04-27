@@ -21,7 +21,6 @@
 #include <arch/cpu.h>
 #include <sys/__assert.h>
 #include <toolchain.h>
-#include <linker/sections.h>
 #include <sw_isr_table.h>
 #include <irq.h>
 #include <sys/printk.h>

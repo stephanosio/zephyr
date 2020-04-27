@@ -15,7 +15,6 @@ LOG_MODULE_REGISTER(ipsp);
 #define NET_LOG_ENABLED	0
 
 #include <zephyr.h>
-#include <linker/sections.h>
 #include <errno.h>
 #include <stdio.h>
 

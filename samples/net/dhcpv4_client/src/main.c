@@ -11,7 +11,6 @@
 LOG_MODULE_REGISTER(net_dhcpv4_client_sample, LOG_LEVEL_DBG);
 
 #include <zephyr.h>
-#include <linker/sections.h>
 #include <errno.h>
 #include <stdio.h>
 

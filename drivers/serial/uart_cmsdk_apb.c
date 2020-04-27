@@ -18,7 +18,6 @@
 #include <sys/__assert.h>
 #include <init.h>
 #include <drivers/uart.h>
-#include <linker/sections.h>
 
 /* UART registers struct */
 struct uart_cmsdk_apb {

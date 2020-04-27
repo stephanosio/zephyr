@@ -17,7 +17,6 @@
 #include <sys/printk.h>
 #include <debug/stack.h>
 #include <random/rand32.h>
-#include <linker/sections.h>
 #include <toolchain.h>
 #include <kernel_structs.h>
 #include <device.h>

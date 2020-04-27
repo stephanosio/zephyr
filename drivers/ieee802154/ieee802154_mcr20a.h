@@ -10,7 +10,6 @@
 #ifndef ZEPHYR_DRIVERS_IEEE802154_IEEE802154_MCR20A_H_
 #define ZEPHYR_DRIVERS_IEEE802154_IEEE802154_MCR20A_H_
 
-#include <linker/sections.h>
 #include <sys/atomic.h>
 #include <drivers/spi.h>
 

@@ -15,7 +15,6 @@ LOG_MODULE_REGISTER(net_test, CONFIG_NET_IPV6_LOG_LEVEL);
 #include <errno.h>
 #include <device.h>
 #include <init.h>
-#include <linker/sections.h>
 
 #include <ztest.h>
 

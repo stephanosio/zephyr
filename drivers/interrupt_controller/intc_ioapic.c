@@ -56,7 +56,6 @@
 #include <arch/cpu.h>
 
 #include <toolchain.h>
-#include <linker/sections.h>
 #include <init.h>
 #include <string.h>
 

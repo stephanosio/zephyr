@@ -24,7 +24,6 @@
 #ifdef _ASMLANGUAGE
 
 #include <toolchain.h>
-#include <linker/sections.h>
 
 GTEXT(__start)
 GTEXT(_vector_table)

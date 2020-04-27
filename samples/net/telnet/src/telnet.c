@@ -8,7 +8,6 @@
 LOG_MODULE_REGISTER(net_telnet_sample, LOG_LEVEL_DBG);
 
 #include <zephyr.h>
-#include <linker/sections.h>
 #include <errno.h>
 #include <stdio.h>
 

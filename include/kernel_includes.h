@@ -17,7 +17,6 @@
 #include <zephyr/types.h>
 #include <limits.h>
 #include <toolchain.h>
-#include <linker/sections.h>
 #include <sys/atomic.h>
 #include <sys/__assert.h>
 #include <sched_priq.h>

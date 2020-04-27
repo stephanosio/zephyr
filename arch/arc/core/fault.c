@@ -12,7 +12,6 @@
  */
 
 #include <toolchain.h>
-#include <linker/sections.h>
 #include <inttypes.h>
 
 #include <kernel.h>

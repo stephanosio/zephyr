@@ -15,7 +15,6 @@
 #include <stdlib.h>
 
 #include <zephyr.h>
-#include <linker/sections.h>
 #include <errno.h>
 
 #include <tc_util.h>

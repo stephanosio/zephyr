@@ -31,7 +31,6 @@
 
 #include <init.h>
 #include <toolchain.h>
-#include <linker/sections.h>
 #include <drivers/uart.h>
 #include <sys/sys_io.h>
 

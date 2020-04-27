@@ -22,7 +22,6 @@
 #include <drivers/uart.h>
 #include <drivers/clock_control.h>
 
-#include <linker/sections.h>
 #include <drivers/clock_control/stm32_clock_control.h>
 #include "uart_stm32.h"
 

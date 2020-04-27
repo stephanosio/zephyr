@@ -9,7 +9,6 @@ LOG_MODULE_REGISTER(net_bt, CONFIG_NET_L2_BT_LOG_LEVEL);
 
 #include <kernel.h>
 #include <toolchain.h>
-#include <linker/sections.h>
 #include <string.h>
 #include <errno.h>
 

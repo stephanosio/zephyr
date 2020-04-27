@@ -16,7 +16,6 @@
 #include <arch/x86/msr.h>
 
 #include <toolchain.h>
-#include <linker/sections.h>
 #include <drivers/interrupt_controller/loapic.h> /* public API declarations */
 #include <init.h>
 #include <drivers/interrupt_controller/sysapic.h>

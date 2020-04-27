@@ -16,7 +16,6 @@
 #include <sys/printk.h>
 #include <stdarg.h>
 #include <toolchain.h>
-#include <linker/sections.h>
 #include <syscall_handler.h>
 #include <logging/log.h>
 #include <sys/types.h>

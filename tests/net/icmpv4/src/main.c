@@ -14,7 +14,6 @@ LOG_MODULE_REGISTER(net_test, CONFIG_NET_ICMPV4_LOG_LEVEL);
 #include <stddef.h>
 #include <string.h>
 #include <sys/printk.h>
-#include <linker/sections.h>
 
 #include <tc_util.h>
 

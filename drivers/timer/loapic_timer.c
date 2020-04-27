@@ -58,7 +58,6 @@
 
 #include <kernel.h>
 #include <toolchain.h>
-#include <linker/sections.h>
 #include <sys_clock.h>
 #include <drivers/timer/system_timer.h>
 #include <power/power.h>

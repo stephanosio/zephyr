@@ -18,7 +18,6 @@
 #include <sys/printk.h>
 #include <power/reboot.h>
 #include <toolchain.h>
-#include <linker/sections.h>
 
 extern void z_SysNmiOnReset(void);
 #if !defined(CONFIG_RUNTIME_NMI)

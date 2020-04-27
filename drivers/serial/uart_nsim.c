@@ -10,7 +10,6 @@
 
 #include <kernel.h>
 #include <arch/cpu.h>
-#include <linker/sections.h>
 #include <sys/__assert.h>
 #include <zephyr/types.h>
 #include <sys/util.h>

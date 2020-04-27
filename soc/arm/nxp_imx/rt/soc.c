@@ -8,7 +8,6 @@
 #include <device.h>
 #include <init.h>
 #include <soc.h>
-#include <linker/sections.h>
 #include <fsl_clock.h>
 #include <arch/cpu.h>
 #include <arch/arm/aarch32/cortex_m/cmsis.h>

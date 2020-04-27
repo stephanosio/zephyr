@@ -27,7 +27,6 @@
 #define ZEPHYR_ARCH_X86_INCLUDE_IA32_KERNEL_ARCH_DATA_H_
 
 #include <toolchain.h>
-#include <linker/sections.h>
 #include <ia32/exception.h>
 #include <sys/util.h>
 

@@ -30,7 +30,6 @@ LOG_MODULE_REGISTER(LOG_MODULE_NAME);
 #include <sys/byteorder.h>
 #include <string.h>
 #include <random/rand32.h>
-#include <linker/sections.h>
 #include <sys/atomic.h>
 
 #include <drivers/spi.h>

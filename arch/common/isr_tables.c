@@ -5,7 +5,6 @@
  */
 
 #include <toolchain.h>
-#include <linker/sections.h>
 #include <sw_isr_table.h>
 #include <arch/cpu.h>
 

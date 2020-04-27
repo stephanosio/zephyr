@@ -16,7 +16,6 @@
 #include <kswap.h>
 #include <string.h>
 #include <toolchain.h>
-#include <linker/sections.h>
 #include <wait_q.h>
 #include <ksched.h>
 #include <sys/__assert.h>

@@ -12,7 +12,6 @@
 LOG_MODULE_REGISTER(net_test, NET_LOG_LEVEL);
 
 #include <zephyr.h>
-#include <linker/sections.h>
 
 #include <zephyr/types.h>
 #include <stddef.h>

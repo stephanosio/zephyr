@@ -17,7 +17,6 @@ LOG_MODULE_REGISTER(net_core, CONFIG_NET_CORE_LOG_LEVEL);
 #include <init.h>
 #include <kernel.h>
 #include <toolchain.h>
-#include <linker/sections.h>
 #include <string.h>
 #include <errno.h>
 

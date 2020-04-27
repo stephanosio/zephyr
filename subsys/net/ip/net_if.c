@@ -9,7 +9,6 @@ LOG_MODULE_REGISTER(net_if, CONFIG_NET_IF_LOG_LEVEL);
 
 #include <init.h>
 #include <kernel.h>
-#include <linker/sections.h>
 #include <syscall_handler.h>
 #include <stdlib.h>
 #include <string.h>

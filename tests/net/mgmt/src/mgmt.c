@@ -11,7 +11,6 @@ LOG_MODULE_REGISTER(net_test, CONFIG_NET_MGMT_EVENT_LOG_LEVEL);
 #include <tc_util.h>
 #include <errno.h>
 #include <toolchain.h>
-#include <linker/sections.h>
 
 #include <net/dummy.h>
 #include <net/net_mgmt.h>

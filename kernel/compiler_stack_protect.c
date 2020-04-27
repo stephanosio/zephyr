@@ -20,7 +20,6 @@
 
 #include <kernel_structs.h>
 #include <toolchain.h>
-#include <linker/sections.h>
 #include <kernel.h>
 #include <app_memory/app_memdomain.h>
 

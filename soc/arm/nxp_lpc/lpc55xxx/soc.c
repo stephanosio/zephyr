@@ -17,7 +17,6 @@
 #include <init.h>
 #include <soc.h>
 #include <drivers/uart.h>
-#include <linker/sections.h>
 #include <arch/cpu.h>
 #include <aarch32/cortex_m/exc.h>
 #include <fsl_power.h>

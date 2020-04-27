@@ -17,7 +17,6 @@ LOG_MODULE_REGISTER(net_test, NET_LOG_LEVEL);
 #include <string.h>
 #include <errno.h>
 #include <sys/printk.h>
-#include <linker/sections.h>
 
 #include <ztest.h>
 

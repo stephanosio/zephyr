@@ -10,7 +10,6 @@
 LOG_MODULE_REGISTER(net_test, CONFIG_NET_ARP_LOG_LEVEL);
 
 #include <zephyr.h>
-#include <linker/sections.h>
 
 #include <tc_util.h>
 
