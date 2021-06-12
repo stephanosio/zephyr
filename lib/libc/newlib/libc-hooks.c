@@ -7,6 +7,7 @@
 #include <arch/cpu.h>
 #include <errno.h>
 #include <stdio.h>
+#include <malloc.h>
 #include <sys/__assert.h>
 #include <sys/stat.h>
 #include <linker/linker-defs.h>
@@ -298,17 +299,130 @@ void *_sbrk(intptr_t count)
 }
 __weak FUNC_ALIAS(_sbrk, sbrk, void *);
 
-static LIBC_DATA SYS_MUTEX_DEFINE(heap_mutex);
+#ifdef CONFIG_MULTITHREADING
+/*
+ * Newlib Retargetable Locking Interface Implementation
+ *
+ * When multithreading is enabled, the newlib retargetable locking interface is
+ * defined below to override the default void implementation and provide the
+ * Zephyr-side locks.
+ */
 
-void __malloc_lock(struct _reent *reent)
+/* Static locks */
+struct sys_mutex __lock___sinit_recursive_mutex;
+struct sys_mutex __lock___sfp_recursive_mutex;
+struct sys_mutex __lock___atexit_recursive_mutex;
+struct sys_mutex __lock___malloc_recursive_mutex;
+struct sys_mutex __lock___env_recursive_mutex;
+struct sys_sem __lock___at_quick_exit_mutex;
+struct sys_sem __lock___tz_mutex;
+struct sys_sem __lock___dd_hash_mutex;
+struct sys_sem __lock___arc4random_mutex;
+
+/* Initialise all static locks after boot */
+static int newlib_locks_prepare(const struct device *unused)
 {
-	sys_mutex_lock(&heap_mutex, K_FOREVER);
+	ARG_UNUSED(unused);
+
+	/* Initialise recursive locks */
+	sys_mutex_init(&__lock___sinit_recursive_mutex);
+	sys_mutex_init(&__lock___sfp_recursive_mutex);
+	sys_mutex_init(&__lock___atexit_recursive_mutex);
+	sys_mutex_init(&__lock___malloc_recursive_mutex);
+	sys_mutex_init(&__lock___env_recursive_mutex);
+
+	/* Initialise non-recursive locks */
+	sys_sem_init(&__lock___at_quick_exit_mutex, 1, 1);
+	sys_sem_init(&__lock___tz_mutex, 1, 1);
+	sys_sem_init(&__lock___dd_hash_mutex, 1, 1);
+	sys_sem_init(&__lock___arc4random_mutex, 1, 1);
+
+	return 0;
 }
 
-void __malloc_unlock(struct _reent *reent)
+SYS_INIT(newlib_locks_prepare, POST_KERNEL,
+	 CONFIG_KERNEL_INIT_PRIORITY_DEFAULT);
+
+/* Create a new dynamic non-recursive lock */
+void __retarget_lock_init(_LOCK_T *lock)
 {
-	sys_mutex_unlock(&heap_mutex);
+	__ASSERT_NO_MSG(lock != NULL);
+
+	/* Allocate semaphore object */
+	*lock = malloc(sizeof(struct sys_sem));
+	__ASSERT(*lock != NULL, "non-recursive lock allocation failed");
+
+	sys_sem_init((struct sys_sem *)*lock, 1, 1);
 }
+
+/* Create a new dynamic recursive lock */
+void __retarget_lock_init_recursive(_LOCK_T *lock)
+{
+	__ASSERT_NO_MSG(lock != NULL);
+
+	/* Allocate mutex object */
+	*lock = malloc(sizeof(struct sys_mutex));
+	__ASSERT(*lock != NULL, "recursive lock allocation failed");
+
+	sys_mutex_init((struct sys_mutex *)*lock);
+}
+
+/* Close dynamic non-recursive lock */
+void __retarget_lock_close(_LOCK_T lock)
+{
+	__ASSERT_NO_MSG(lock != NULL);
+	free(lock);
+}
+
+/* Close dynamic recursive lock */
+void __retarget_lock_close_recursive(_LOCK_T lock)
+{
+	__ASSERT_NO_MSG(lock != NULL);
+	free(lock);
+}
+
+/* Acquiure non-recursive lock */
+void __retarget_lock_acquire(_LOCK_T lock)
+{
+	__ASSERT_NO_MSG(lock != NULL);
+	sys_sem_take((struct sys_sem *)lock, K_FOREVER);
+}
+
+/* Acquiure recursive lock */
+void __retarget_lock_acquire_recursive(_LOCK_T lock)
+{
+	__ASSERT_NO_MSG(lock != NULL);
+	sys_mutex_lock((struct sys_mutex *)lock, K_FOREVER);
+}
+
+/* Try acquiring non-recursive lock */
+int __retarget_lock_try_acquire(_LOCK_T lock)
+{
+	__ASSERT_NO_MSG(lock != NULL);
+	return !sys_sem_take((struct sys_sem *)lock, K_NO_WAIT);
+}
+
+/* Try acquiring recursive lock */
+int __retarget_lock_try_acquire_recursive(_LOCK_T lock)
+{
+	__ASSERT_NO_MSG(lock != NULL);
+	return !sys_mutex_lock((struct sys_mutex *)lock, K_NO_WAIT);
+}
+
+/* Release non-recursive lock */
+void __retarget_lock_release(_LOCK_T lock)
+{
+	__ASSERT_NO_MSG(lock != NULL);
+	sys_sem_give((struct sys_sem *)lock);
+}
+
+/* Release recursive lock */
+void __retarget_lock_release_recursive(_LOCK_T lock)
+{
+	__ASSERT_NO_MSG(lock != NULL);
+	sys_mutex_unlock((struct sys_mutex *)lock);
+}
+#endif /* CONFIG_MULTITHREADING */
 
 __weak int *__errno(void)
 {
