@@ -6,8 +6,21 @@
 
 #include <zephyr.h>
 #include <sys/printk.h>
+#include <malloc.h>
+
+/* Run this on qemu_xtensa and see the first malloc return NULL. */
+
+volatile char rubbish[552];
 
 void main(void)
 {
-	printk("Hello World! %s\n", CONFIG_BOARD);
+	void *ptr;
+
+	for (int i = 0; i < 34; i++) {
+		ptr = malloc(128);
+
+		printk("%03d: %p\n", i, ptr);
+	}
+
+	(void)rubbish[0];
 }

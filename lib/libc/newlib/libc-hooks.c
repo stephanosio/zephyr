@@ -287,6 +287,7 @@ void *_sbrk(intptr_t count)
 	void *ret, *ptr;
 
 	ptr = ((char *)HEAP_BASE) + heap_sz;
+	printk("_sbrk: %p, %ld\n", ptr, count);
 
 	if ((heap_sz + count) < MAX_HEAP_SIZE) {
 		heap_sz += count;
