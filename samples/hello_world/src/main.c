@@ -10,7 +10,7 @@
 
 /* Run this on qemu_xtensa and see the first malloc return NULL. */
 
-volatile char rubbish[552];
+volatile char rubbish[552 + 24];
 
 void main(void)
 {
