@@ -1,0 +1,31 @@
+tests:
+  printk.format:
+    harness: console
+    harness_config:
+      type: multi_line
+      ordered: true
+      regex:
+      - "d8"
+      - "d16"
+      - "d32"
+      - "d64"
+      - "i8"
+      - "i16"
+      - "i32"
+      - "i64"
+      - "o8"
+      - "o16"
+      - "o32"
+      - "o64"
+      - "u8"
+      - "u16"
+      - "u32"
+      - "u64"
+      - "x8"
+      - "x10"
+      - "x20"
+      - "x40"
+      - "X8"
+      - "X10"
+      - "X20"
+      - "X40"
