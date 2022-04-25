@@ -2181,6 +2181,10 @@ class TestInstance(DisablePyTestCollectionMixin):
             if not find_executable("tsim-leon3"):
                 target_ready = False
 
+        if self.platform.simulation == "armfvp":
+            if not os.getenv("ARMFVP_BIN_PATH"):
+                target_ready = False
+
         testcase_runnable = self.testcase_runnable(self.testcase, fixtures)
 
         return testcase_runnable and target_ready
