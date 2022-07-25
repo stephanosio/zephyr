@@ -8,6 +8,7 @@
 #include <functional>
 #include <memory>
 #include <vector>
+#include <random>
 #include <ztest.h>
 
 BUILD_ASSERT(__cplusplus == 201703);
@@ -94,6 +95,11 @@ ZTEST(libcxx_tests, test_exception)
 	ztest_test_skip();
 }
 #endif
+
+ZTEST(libcxx_tests, test_random_device)
+{
+	std::random_device rd;
+}
 
 static void *libcxx_tests_setup(void)
 {
