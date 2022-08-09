@@ -198,7 +198,8 @@ manifest:
       path: modules/lib/openthread
     - name: picolibc
       path: modules/lib/picolibc
-      revision: e87b2fc37345a62361478f0a6efd140e14180ba5
+      url: https://github.com/picolibc/picolibc.git
+      revision: pull/316/head
     - name: segger
       revision: d4e568a920b4bd087886170a5624c167b2d0665e
       path: modules/debug/segger
