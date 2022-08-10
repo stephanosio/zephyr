@@ -357,6 +357,9 @@ zephyr_cc_option(-fno-asynchronous-unwind-tables)
 zephyr_cc_option(-fno-pie)
 zephyr_cc_option(-fno-pic)
 
+# FIXME: just testing ...
+zephyr_cc_option(-fno-strict-aliasing)
+
 if(CONFIG_THREAD_LOCAL_STORAGE)
 # Only support local exec TLS model at this point.
 zephyr_cc_option(-ftls-model=local-exec)
