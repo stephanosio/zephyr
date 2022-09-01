@@ -48,3 +48,7 @@ zephyr_linker_section(NAME  .debug_pubtypes ADDRESS 0)
 zephyr_linker_section(NAME  .debug_ranges ADDRESS 0)
 # DWARF Extension.
 zephyr_linker_section(NAME  .debug_macro ADDRESS 0)
+# DWARF 5
+zephyr_linker_section(NAME  .debug_line_str ADDRESS 0)
+zephyr_linker_section(NAME  .debug_loclists ADDRESS 0)
+zephyr_linker_section(NAME  .debug_rnglists ADDRESS 0)
