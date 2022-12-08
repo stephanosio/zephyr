@@ -501,7 +501,7 @@ assignment:
 
 .. code-block:: none
 
-   CONFIG_CPLUSPLUS=y
+   CONFIG_CPP=y
 
 Looking at :ref:`existing samples <samples-and-demos>` is a good way to get
 started.
