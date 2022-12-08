@@ -288,9 +288,9 @@ Build system:
     - alexanderwachter
     - cfriedt
   files:
-    - subsys/cpp/
-    - tests/subsys/cpp/
-    - samples/subsys/cpp/
+    - lib/cpp/
+    - tests/cpp/
+    - samples/lib/cpp/
   labels:
     - "area: C++"
 
