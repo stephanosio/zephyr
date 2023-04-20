@@ -1,3 +1,4 @@
 name: bar
 append:
+  OVERLAY_CONFIG: bar.conf
   DTC_OVERLAY_FILE: bar.overlay

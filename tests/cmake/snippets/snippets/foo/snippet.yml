@@ -1,3 +1,4 @@
 name: foo
 append:
   OVERLAY_CONFIG: foo.conf
+  DTC_OVERLAY_FILE: foo.overlay
