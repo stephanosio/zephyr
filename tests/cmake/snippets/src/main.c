@@ -21,6 +21,8 @@
 
 ZTEST_SUITE(snippet_tests, NULL, NULL, NULL, NULL, NULL);
 
+/* TODO: Add board-specific snippet configuration test */
+
 ZTEST(snippet_tests, test_overlay_config)
 {
 	if (IS_ENABLED(CONFIG_TEST_TYPE_NONE)) {
